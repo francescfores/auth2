@@ -30,6 +30,16 @@ Route::get('/resource', function () {
 
 });
 
-Route::get('/flushSession',function() {
-    Session::flush();
-});
+Route::get('/flushSession',
+    ['as' => 'session.flush',
+     function() {
+            Session::flush();
+    }]
+);
+
+Route::get('/register',
+    ['as' => 'auth.register',
+      function() {
+        echo "Aquí et registraras";
+    }]
+);
