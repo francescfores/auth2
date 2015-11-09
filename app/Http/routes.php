@@ -25,7 +25,11 @@ Route::get('/resource', function () {
     if ($authenticated) {
         return view('resource');
     } else {
-        return view('login');
+        return redirect()->route('auth.login');
     }
 
+});
+
+Route::get('/flushSession',function() {
+    Session::flush();
 });
