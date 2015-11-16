@@ -38,8 +38,11 @@ Route::get('/flushSession',
 );
 
 Route::get('/register',
-    ['as' => 'auth.register',
-      function() {
-        echo "Aquí et registraras";
-    }]
+    ['as' => 'register.register',
+        'uses' => 'RegisterController@getRegister']
+);
+
+Route::post('/register',
+    ['as' => 'register.postRegister',
+        'uses' => 'RegisterController@postRegister']
 );
