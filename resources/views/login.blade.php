@@ -58,7 +58,7 @@
                 </form>
 
                 No ets usuari encara?
-                <a id="register" href="{{ route('auth.register') }}">Registra't</a>
+                <a id="register" href="{{ route('register.register') }}">Registra't</a>
             </div>
         </div>
     </body>
