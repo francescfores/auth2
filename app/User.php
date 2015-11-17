@@ -37,3 +37,5 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 }
+
+//create table users (name varchar(100), email varchar(200), password varchar(200), updated_at timestamp, created_at timestamp);
