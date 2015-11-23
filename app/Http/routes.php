@@ -14,6 +14,7 @@ Route::get('/', function () {
 
 Route::get('/home', ['as' => 'auth.home', function () { return view('home'); }]);
 
+//Redireccio al accedir una vista dins de la carptea resource
 Route::get('/resource', function () {
     $authenticated = false;
     if (Session::has('authenticated')) {
