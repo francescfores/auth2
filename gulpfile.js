@@ -16,4 +16,5 @@ elixir(function(mix) {
  //mix.styles(['welcome.css','welcome2.css']);
  //mix.scripts(['hello.js','hello2.js']);
  mix.browserify('main.js');
+ mix.phpUnit();
 });

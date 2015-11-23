@@ -16,16 +16,21 @@ Route::get('/home', ['as' => 'auth.home', function () { return view('home'); }])
 
 //Redireccio al accedir una vista dins de la carptea resource
 Route::get('/resource', function () {
-    $authenticated = false;
-    if (Session::has('authenticated')) {
-        if (Session::get('authenticated') == true ) {
-            $authenticated = true;
-        }
-    }
-
-    if ($authenticated) {
+//    $authenticated = false;
+//    if (Session::has('authenticated')) {
+//        if (Session::get('authenticated') == true ) {
+//            $authenticated = true;
+//        }
+//    }
+//
+//    if ($authenticated) {
+//        return view('resource');
+//    } else {
+//        return redirect()->route('auth.login');
+//    }
+    if(\Auth::check()){
         return view('resource');
-    } else {
+    }else{
         return redirect()->route('auth.login');
     }
 

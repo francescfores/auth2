@@ -57,12 +57,12 @@ class ExampleTest extends TestCase
 
     private function logged()
     {
-        Session::set('authenticated',true);
+       \Auth::loginUsingId(1);
     }
 
     private function unlogged()
     {
-        Session::set('authenticated',false);
+        \Auth::logout();
     }
 
     /**
@@ -70,13 +70,14 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+    /*
     public function testLoginPageHaveRegisterLinkAndWorksOk()
     {
         $this->visit('/login')
             ->click('register')
             ->seePageIs('/register');
-    }
-
+    }*/
+/*
     public function testPostLoginOk(){
         $this->visit('/login')
             ->type('pepitapalotes@gmail.com', 'email')
@@ -84,8 +85,8 @@ class ExampleTest extends TestCase
             ->check('remember')
             ->press('login')
             ->seePageIs('/home');
-    }
-
+    }*/
+/*
     public function testPostLoginNotOk(){
         $this->visit('/login')
             ->type('sergiturbadenas@gmail.com', 'email')
@@ -93,6 +94,6 @@ class ExampleTest extends TestCase
             ->check('remember')
             ->press('login')
             ->seePageIs('/login');
-    }
+    }*/
 
 }
