@@ -52,7 +52,7 @@
 
         <form method="post" action="{{ route('register.postRegister') }}">
             {!! csrf_field() !!}
-            <div class="form-group">
+            <div class="form-group ">
                 <label for="name">User name:</label>
                 <input type="text" class="form-control" id="name" name="name"
                        placeholder="El teu nom aquí"
@@ -62,10 +62,11 @@
             <div class="form-group" id="emailFormGroup">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" id="email" name="email"
-                       placeholder="myemail@example.com"
+                       placeholder="@{{placeholder}}"
                        value="{{ old('email') }}"
-                       required>
-                <div v-show="exists">Email ja existeix</div>
+                       required
+                        v-on:blur="checkEmailExists">
+                <!--<div v-show="exists">Email ja existeix</div>-->
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
