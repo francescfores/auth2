@@ -35,6 +35,9 @@ Route::get('/resource', function () {
     }
 
 });
+//exemple de middelware per controlar l'acces a un recurs 
+Route::get('/resource',['as' => 'resource','middelware' => 'auth', 'uses' => 'LoginController@getLogin']);
+
 
 Route::get('/flushSession',
     ['as' => 'session.flush',
@@ -53,7 +56,13 @@ Route::post('/register',
         'uses' => 'RegisterController@postRegister']
 );
 
+/*
 Route::get('/register',
+    ['as' => 'checkEmailExists',
+        'uses' => 'ApiController@checkEmailExists']
+);*/
+
+Route::get('/checkEmailExists',
     ['as' => 'checkEmailExists',
         'uses' => 'ApiController@checkEmailExists']
 );
